@@ -1,0 +1,28 @@
+{
+  "name": "lethani",
+  "owner": {
+    "name": "onurogut"
+  },
+  "plugins": [
+    {
+      "name": "lethani",
+      "source": ".",
+      "version": "0.1.0",
+      "description": "Agentic bug bounty and pentest orchestrator. Phase-aligned playbooks (recon -> scan -> manual -> chain -> report), parallel sub-agent dispatch, Kali via kali-ssh MCP. Authorization-implicit defaults.",
+      "homepage": "https://github.com/onurogut/lethani",
+      "license": "MIT",
+      "keywords": [
+        "bug-bounty",
+        "penetration-testing",
+        "recon",
+        "offensive-security",
+        "agentic",
+        "kali",
+        "mcp"
+      ],
+      "commands": ["./commands"],
+      "agents": ["./agents"],
+      "skills": ["./skills"]
+    }
+  ]
+}

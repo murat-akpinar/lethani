@@ -89,11 +89,15 @@ implicit — it is a tool, not a junior consultant.
 ### Option A — as a Claude Code plugin (recommended)
 
 ```
-/plugin install github:onurogut/lethani
+/plugin marketplace add onurogut/lethani
+/plugin install lethani@lethani
 ```
 
-This makes the slash commands (`/new-target`, `/recon`, `/scan`, …) available
-in any Claude Code session. The plugin metadata is in `.claude-plugin/`.
+The first command registers this repo as a Claude Code plugin marketplace
+(`.claude-plugin/marketplace.json` is the catalog). The second installs the
+`lethani` plugin from that marketplace, exposing the slash commands
+(`/new-target`, `/recon`, `/scan`, …), the 6 recon/OSINT sub-agents, and
+the 3 skills in any Claude Code session.
 
 ### Option B — as a workspace
 
@@ -288,7 +292,8 @@ inside Claude Code. The plugin manager pulls the latest commit on the
 configured branch (usually `main`). It does not run Kali-side updates.
 
 There is no push notification when the upstream repo changes. To learn
-about new releases, watch the repo on GitHub or skim `CHANGELOG.md`.
+about new releases, watch the repo on GitHub
+([Releases page](https://github.com/onurogut/lethani/releases)).
 
 ### If you cloned as a workspace
 
