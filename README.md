@@ -88,8 +88,17 @@ implicit — it is a tool, not a junior consultant.
 
 ### Option A — as a Claude Code plugin (recommended)
 
+Inside Claude Code, type these two commands one at a time. **The line must
+start with `/` (no leading space)** — Claude Code only treats the message
+as a slash command when `/` is the first character. If you paste with a
+leading space the prompt becomes a regular chat message and the agent
+replies "I can't run built-in commands."
+
 ```
 /plugin marketplace add onurogut/lethani
+```
+
+```
 /plugin install lethani@lethani
 ```
 
