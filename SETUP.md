@@ -143,6 +143,7 @@ once you create the engagement (see `00_infra/behavior_rules.md` §1).
 
 | Symptom                                       | Fix                                                                  |
 |-----------------------------------------------|----------------------------------------------------------------------|
+| `/plugin install` fails with `Permission denied (publickey)` | Claude Code clones via `git@github.com:...` (SSH). The repo is public so HTTPS works — force the rewrite once: `git config --global url."https://github.com/".insteadOf "git@github.com:"` then retry. |
 | MCP shows "kali-ssh unavailable"              | `claude mcp list` → check the entry; `ssh talon-kali` must work first |
 | `command not found: subfinder` on Kali        | `export PATH=$PATH:$HOME/go/bin` or call by absolute path             |
 | `setup-kali.sh` fails on `go install`         | `export GOPROXY=direct` and re-run                                   |

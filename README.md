@@ -108,6 +108,15 @@ The first command registers this repo as a Claude Code plugin marketplace
 (`/new-target`, `/recon`, `/scan`, …), the 6 recon/OSINT sub-agents, and
 the 3 skills in any Claude Code session.
 
+> If `/plugin install` fails with `Permission denied (publickey)`, Claude
+> Code is trying to clone via SSH. The repo is public, so HTTPS is fine:
+>
+> ```bash
+> git config --global url."https://github.com/".insteadOf "git@github.com:"
+> ```
+>
+> Then retry `/plugin install lethani@lethani`.
+
 ### Option B — as a workspace
 
 ```bash
