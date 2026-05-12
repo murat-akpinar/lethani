@@ -13,7 +13,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square&labelColor=1a1a1a&color=8a6f3a)](LICENSE)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-1a1a1a?style=flat-square&labelColor=1a1a1a&color=d8b66b)](https://claude.com/claude-code)
-[![Status](https://img.shields.io/badge/status-alpha-1a1a1a?style=flat-square&labelColor=1a1a1a&color=c8302f)](#)
+[![Status](https://img.shields.io/badge/status-alpha-1a1a1a?style=flat-square&labelColor=1a1a1a&color=c8302f)](https://github.com/onurogut/lethani/releases)
 [![Kali required](https://img.shields.io/badge/kali-required-1a1a1a?style=flat-square&labelColor=1a1a1a&color=557799&logo=kalilinux&logoColor=fff)](https://www.kali.org)
 [![Demo](https://img.shields.io/badge/demo-gif-1a1a1a?style=flat-square&labelColor=1a1a1a&color=c8302f)](examples/demo.gif)
 

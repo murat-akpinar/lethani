@@ -47,10 +47,9 @@ jobs:
             --cache
             --max-cache-age 7d
             --no-progress
-            --exclude-mail
+            --exclude '^mailto:'
             --exclude '^https?://(?:.*example\.com|.*\.example|localhost|127\.0\.0\.1)'
             --exclude '169\.254\.169\.254'
-            --exclude 'YOUR_EMAIL|your_email'
             --exclude-path 'plugin/00_infra/_archive'
             --exclude-path 'engagements'
             --include-fragments

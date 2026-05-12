@@ -51,3 +51,12 @@ MD025: false
 
 # Unsafe inline HTML / Liquid in playbook examples.
 MD038: false
+
+# Unordered list indentation varies in playbook procedures.
+MD007: false
+
+# Bold style — playbooks sometimes use __ for emphasis on inline tokens.
+MD050: false
+
+# Allow link targets like (#) for placeholder anchors.
+MD042: false

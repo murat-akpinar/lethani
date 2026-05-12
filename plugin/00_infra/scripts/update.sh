@@ -35,9 +35,10 @@ BEFORE="$(git rev-parse HEAD)"
 # 2. fetch + fast-forward only (refuse to merge anything ambiguous)
 say "git fetch + fast-forward"
 git fetch --quiet
-if ! git merge --ff-only @{u} 2>/dev/null; then
+# shellcheck disable=SC1083  # @{u} is git syntax (upstream tracking ref), not a brace expansion
+if ! git merge --ff-only '@{u}' 2>/dev/null; then
   warn "fast-forward not possible — you have local changes ahead of upstream."
-  warn "review with: git status; git log @{u}..HEAD"
+  warn 'review with: git status; git log @{u}..HEAD'
   exit 2
 fi
 
