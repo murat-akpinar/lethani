@@ -203,6 +203,7 @@ unrelated playbooks.
 | Pending patches / review staged / apply N         | commands/learn-pending.md                     |
 | **HEALTH / UPDATE**                               |                                               |
 | Version / check update / freshness / status       | commands/lethani-check.md                     |
+| Help / list commands / what can I do              | commands/lethani-help.md                      |
 | **AGENTIC MODE**                                  |                                               |
 | Parallel / fan out / sub-agents / agentic         | 00_infra/agentic_mode.md                      |
 | Run phase 1 / run all recon / scan all subs       | 00_infra/agentic_mode.md (default)            |
