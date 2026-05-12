@@ -96,10 +96,18 @@ emit_text() {
   printf 'pending patches : %s\n' "$PENDING_COUNT"
   printf -- '─────────────────────────────────────────\n'
   RECS=()
-  [[ "$UPDATE_AVAILABLE" == "yes" ]] && RECS+=("Update plugin: /plugin marketplace update lethani  →  /plugin install lethani@lethani")
-  [[ -n "$LEARN_DAYS" && "$LEARN_DAYS" -gt 7 ]] && RECS+=("Run /learn-fetch (last update was $LEARN_DAYS days ago)")
-  [[ -z "$LAST_LEARN" ]] && RECS+=("No Learning Mode run yet — try /learn-fetch")
-  [[ "$PENDING_COUNT" -gt 0 ]] && RECS+=("Review staged patches: /learn-pending  ($PENDING_COUNT pending)")
+  if [[ "$UPDATE_AVAILABLE" == "yes" ]]; then
+    RECS+=("Update plugin: /plugin marketplace update lethani  →  /plugin install lethani@lethani")
+  fi
+  if [[ -n "$LEARN_DAYS" && "$LEARN_DAYS" -gt 7 ]]; then
+    RECS+=("Run /learn-fetch (last update was $LEARN_DAYS days ago)")
+  fi
+  if [[ -z "$LAST_LEARN" ]]; then
+    RECS+=("No Learning Mode run yet — try /learn-fetch")
+  fi
+  if [[ "$PENDING_COUNT" -gt 0 ]]; then
+    RECS+=("Review staged patches: /learn-pending  ($PENDING_COUNT pending)")
+  fi
   if [[ ${#RECS[@]} -gt 0 ]]; then
     printf 'RECOMMENDATIONS\n'
     for r in "${RECS[@]}"; do printf '  - %s\n' "$r"; done
@@ -114,5 +122,12 @@ emit_json() {
 case "$MODE" in
   text)  emit_text ;;
   json)  emit_json ;;
-  quiet) [[ "$NEEDS_ACTION" == "yes" ]] && emit_text ;;
+  quiet)
+    if [[ "$NEEDS_ACTION" == "yes" ]]; then
+      emit_text
+    fi
+    ;;
 esac
+
+# Always exit 0 — this script is informational, never a failure signal.
+exit 0
