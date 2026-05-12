@@ -389,7 +389,14 @@ clone it.
 
 ### Health check / "is a new version available?"
 
-Inside Claude Code, run:
+If you installed lethani as a plugin, the SessionStart hook
+(`plugin/hooks/hooks.json`) **automatically** runs
+`check-update.sh --quiet` every time you open Claude Code. The script only
+prints something when there is action to take — a newer release, a stale
+Learning Mode run (>7 days), or pending patches in the queue. Otherwise
+your session opens silently.
+
+To force a full report at any time:
 
 ```
 /lethani-check
@@ -406,9 +413,9 @@ Or from a shell:
 ./plugin/00_infra/scripts/check-update.sh
 ```
 
-The same script is invoked from the cron job (when you enabled auto-update)
-in `--quiet` mode, so the weekly log only gets noisy when there is
-actually something to do.
+The same script is invoked from the cron job (when you enabled
+auto-update) in `--quiet` mode, so the weekly log only gets noisy when
+there is actually something to do.
 
 ### Learning Mode auto-fetch (opt-in)
 

@@ -1,0 +1,15 @@
+{
+  "description": "lethani SessionStart: silently surface plugin updates, learning freshness, and pending patches when there is something to act on.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/00_infra/scripts/check-update.sh --quiet"
+          }
+        ]
+      }
+    ]
+  }
+}
