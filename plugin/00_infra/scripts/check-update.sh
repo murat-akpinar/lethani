@@ -78,9 +78,10 @@ fi
 
 # decide whether to surface in quiet mode
 NEEDS_ACTION="no"
-[[ "$UPDATE_AVAILABLE" == "yes" ]] && NEEDS_ACTION="yes"
-[[ -n "$LEARN_DAYS" && "$LEARN_DAYS" -gt 7 ]] && NEEDS_ACTION="yes"
-[[ "$PENDING_COUNT" -gt 0 ]] && NEEDS_ACTION="yes"
+if [[ "$UPDATE_AVAILABLE" == "yes" ]]; then NEEDS_ACTION="yes"; fi
+if [[ -n "$LEARN_DAYS" && "$LEARN_DAYS" -gt 7 ]]; then NEEDS_ACTION="yes"; fi
+if [[ -z "$LAST_LEARN" ]]; then NEEDS_ACTION="yes"; fi
+if [[ "$PENDING_COUNT" -gt 0 ]]; then NEEDS_ACTION="yes"; fi
 
 emit_text() {
   printf 'LETHANI HEALTH — %s\n' "$(date '+%Y-%m-%d %H:%M')"
