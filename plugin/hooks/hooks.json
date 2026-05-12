@@ -1,5 +1,5 @@
 {
-  "description": "lethani SessionStart: silently surface plugin updates, learning freshness, and pending patches when there is something to act on.",
+  "description": "lethani SessionStart: silently surface plugin updates, learning freshness, and pending patches when there is something to act on. Diagnostic log at /tmp/lethani-hook.log records every fire.",
   "hooks": {
     "SessionStart": [
       {
@@ -7,7 +7,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"${CLAUDE_PLUGIN_ROOT}/00_infra/scripts/check-update.sh\" --quiet",
+            "command": "{ echo \"$(date '+%Y-%m-%d %H:%M:%S') matcher=startup|clear|compact CLAUDE_PLUGIN_ROOT=${CLAUDE_PLUGIN_ROOT:-UNSET}\"; \"${CLAUDE_PLUGIN_ROOT}/00_infra/scripts/check-update.sh\" --quiet 2>&1; } >> /tmp/lethani-hook.log 2>&1; \"${CLAUDE_PLUGIN_ROOT}/00_infra/scripts/check-update.sh\" --quiet",
             "timeout": 10
           }
         ]
